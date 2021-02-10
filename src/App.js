@@ -21,9 +21,9 @@ export default class App extends Component {
       posts: []
     }
   }
-  componentDidMount() {
+  componentDidMount = () => {
     axios.get('/api').then(response => {
-      this.setState({ posts: response['data'] })
+      this.setState({ posts: [response.data] })
     })
   }
   render() {
