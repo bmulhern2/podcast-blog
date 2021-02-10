@@ -20,11 +20,15 @@ export default class App extends Component {
       newLink: '',
       posts: []
     }
+    this.loadPosts = this.loadPosts.bind(this);
   }
-  componentDidMount = () => {
+  loadPosts = () => {
     axios.get('/api').then(response => {
       this.setState({ posts: [response.data] })
     })
+  }
+  componentDidMount = () => {
+    this.loadPosts();
   }
   render() {
     console.log(this.state.posts)
