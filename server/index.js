@@ -25,4 +25,6 @@ app.use('/api', api);
 
 const server = http.createServer(app);
 
-server.listen(8080);
+let port = 8080 || process.env.PORT
+
+server.listen(port);
