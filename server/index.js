@@ -17,6 +17,7 @@ var app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(require('prerender-node'))
 
 app.use('/', express.static(path.join(__dirname, '../build')));
 
